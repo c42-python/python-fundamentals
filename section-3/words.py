@@ -1,5 +1,7 @@
 # run from REPL using 
 # python words.py
+# 'import words' in REPL would also execute the code, printing the results which might not be 
+#       what we want
 from urllib.request import urlopen
 with urlopen('http://sixty-north.com/c/t.txt') as story:
     story_words = []

@@ -51,5 +51,5 @@ def main(url):
 
 # Pass params in script execution as command line positinal args
 if __name__ == '__main__':
-    url = sys.argv[1]
+    url = sys.argv[1] # The 0th arg is module filename
     main(url)

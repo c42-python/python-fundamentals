@@ -20,3 +20,8 @@ def fetch_words():
 
     for word in story_words:
         print(word)
+
+# if executed as a script then call the function and execute it
+# which means when run as an import only the function would be defined - not executed immediately
+if __name__ == '__main__':
+    fetch_words()

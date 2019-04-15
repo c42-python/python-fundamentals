@@ -1,8 +1,10 @@
+import sys
+
 # using an entry function to easily use the code as script (called main here)
 # otherwise can be imported to use function defs individually in other programs
-def fetch_words():
+def fetch_words(url):
     from urllib.request import urlopen
-    with urlopen('http://sixty-north.com/c/t.txt') as story:
+    with urlopen(url) as story:
         story_words = []
         for line in story:
             line_words = line.decode('utf-8').split()
@@ -14,11 +16,12 @@ def print_items(items):
     for item in items:
         print(item)
 
-def main():
-    words = fetch_words()
+# Easily pass function args via REPL
+def main(url):
+    words = fetch_words(url)
     print(words)
 
-# if executed as a script then call the function and execute it
-# which means when run as an import only the function would be defined - not executed immediately
+# Pass params in script execution as command line positinal args
 if __name__ == '__main__':
-    main()
+    url = sys.argv[1]
+    main(url)

@@ -12,14 +12,17 @@ def fetch_words(url):
                 story_words.append(word)
     return story_words
 
+
 def print_items(items):
     for item in items:
         print(item)
+
 
 # Easily pass function args via REPL
 def main(url):
     words = fetch_words(url)
     print(words)
+    
 
 # Pass params in script execution as command line positinal args
 if __name__ == '__main__':
